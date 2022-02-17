@@ -1,0 +1,24 @@
+<div class="container justified">
+    <h1 class="header-item">Bienvenue au cours {{ title }}</h1>
+    <img src="https://bit.ly/3m206ss" width="400" height="80" alt="Logo Scrabble" />
+    <section id="server-message">
+        <p>messages:</p>
+        <p *ngFor="let message of messages$ | async">{{ message.body }}</p>
+        <div class="justified">
+            <input type="text" [(ngModel)]="messageInput">
+            <button class="button" (click)="sendMessage()">Envoyer un message</button>
+            <button class="button" (click)="resetMessages()">Reset les messages</button>
+        </div>
+    </section>
+
+    <button class="button" routerLink="/game">Jouer!</button>
+
+    <div class="footer-item">
+        <h4 class="team-name">Équipe Poly</h4>
+        <p>
+            <span>Coéquipier #1</span>, <span>Coéquipier #2</span>, <span>Coéquipier #3</span>, <span>Coéquipier
+                #4</span>,
+            <span>Coéquipier #5</span>, <span>Coéquipier #6</span>
+        </p>
+    </div>
+</div>
